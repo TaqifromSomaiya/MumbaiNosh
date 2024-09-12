@@ -10,38 +10,30 @@ import java.net.URL;
 public class DownloadUrl {
 
     public String ReadTheUrl(String placeUrl) throws IOException {
-        String data = "";
+        String Data = "";
+        InputStream inputStream = null;
+        HttpURLConnection httpURLConnection = null;
 
-        if (placeUrl == null || placeUrl.isEmpty()) {
-            throw new IllegalArgumentException("URL cannot be null or empty");
+        URL url = new URL(placeUrl);
+
+        httpURLConnection = (HttpURLConnection) url.openConnection();
+        httpURLConnection.connect();
+
+        inputStream = httpURLConnection.getInputStream();
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
+        StringBuffer stringBuffer = new StringBuffer();
+
+        String line = "";
+
+        while ((line = bufferedReader.readLine() )!=null)
+        {
+            stringBuffer.append(line);
         }
+        Data = stringBuffer.toString();
+        bufferedReader.close();
 
-        // Use try-with-resources for automatic resource management
-        try (InputStream inputStream = new URL(placeUrl).openStream();
-             BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream))) {
-
-            HttpURLConnection httpURLConnection = (HttpURLConnection) new URL(placeUrl).openConnection();
-            httpURLConnection.setConnectTimeout(15000); // 15 seconds
-            httpURLConnection.setReadTimeout(15000);    // 15 seconds
-            httpURLConnection.connect();
-
-            // Check for successful response code
-            if (httpURLConnection.getResponseCode() != HttpURLConnection.HTTP_OK) {
-                throw new IOException("HTTP error code: " + httpURLConnection.getResponseCode());
-            }
-
-            StringBuilder stringBuffer = new StringBuilder();
-            String line;
-            while ((line = bufferedReader.readLine()) != null) {
-                stringBuffer.append(line);
-            }
-
-            data = stringBuffer.toString();
-        } catch (IOException e) {
-            e.printStackTrace(); // Log the exception
-            throw e; // Re-throw the exception to propagate it further
-        }
-
-        return data;
+        inputStream.close();
+        httpURLConnection.disconnect();
+        return Data;
     }
 }

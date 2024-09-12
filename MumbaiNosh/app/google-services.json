@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "514029306031",
+    "firebase_url": "https://nosh-5056d-default-rtdb.firebaseio.com",
+    "project_id": "nosh-5056d",
+    "storage_bucket": "nosh-5056d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:514029306031:android:e7e8c54847b0d95125d45a",
+        "android_client_info": {
+          "package_name": "com.example.mumbainosh"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBu7O4cfAurVFgGV5dVj2SyLHBWRFkvmE0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

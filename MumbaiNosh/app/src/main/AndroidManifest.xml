@@ -18,14 +18,33 @@
         android:theme="@style/Theme.MumbaiNosh"
         tools:targetApi="31">
         <activity
-            android:name=".VerifyOTPActvity"
+            android:name=".BaseActivity"
             android:exported="false" />
         <activity
-            android:name=".SendOTPActivity"
-       android:screenOrientation="portrait"
-            android:windowSoftInputMode="adjustResize"
+            android:name=".About"
             android:exported="false" />
-
+        <activity
+            android:name=".WithBottomNavActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ProviderFinalScreen"
+            android:exported="false" />
+        <activity
+            android:name=".ProviderScreen"
+            android:exported="false" />
+        <activity
+            android:name=".FirstScreen"
+            android:exported="false" />
+        <activity
+            android:name=".RestroDashboard"
+            android:exported="false" />
+        <activity
+            android:name=".AavailFoodList"
+            android:exported="false" />
+        <activity
+            android:name=".RestroList"
+            android:exported="false"
+            android:theme="@style/Theme.MumbaiNosh" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -41,6 +60,18 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyAAJslJw5f55CetSo-utXlYqBL-qyRKDp8" />
 
+        <activity
+            android:name=".ResultsActivity"
+            android:exported="true"
+            android:theme="@style/Theme.MumbaiNosh" />
+        <activity
+            android:name=".VerifyOTPActvity"
+            android:exported="false" />
+        <activity
+            android:name=".SendOTPActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name=".MapsActivity"
             android:exported="true"

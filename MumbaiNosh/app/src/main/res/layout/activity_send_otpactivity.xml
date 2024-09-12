@@ -5,6 +5,59 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+android:background="#FFF59D"
     tools:context=".SendOTPActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+<TextView
+android:id="@+id/tvTitle"
+android:layout_width="wrap_content"
+android:layout_height="wrap_content"
+android:text="Enter Your Email"
+android:textSize="24sp"
+android:textColor="#333333"
+android:textStyle="bold"
+android:gravity="center"
+app:layout_constraintTop_toTopOf="parent"
+app:layout_constraintBottom_toTopOf="@id/etEmail"
+app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintEnd_toEndOf="parent"
+android:layout_marginBottom="20dp" />
+
+
+    <EditText
+        android:id="@+id/etEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:background="@android:color/darker_gray"
+        android:hint="Enter your email"
+        android:inputType="textEmailAddress"
+        android:padding="16dp"
+        android:textColor="#333333"
+        android:textColorHint="#888888"
+        app:layout_constraintBottom_toTopOf="@id/btnSendOTP"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+    <Button
+android:id="@+id/btnSendOTP"
+android:layout_width="0dp"
+android:layout_height="wrap_content"
+android:text="Send OTP"
+android:backgroundTint="#FBC02D"
+    android:textColor="#FFFFFF"
+    android:textStyle="bold"
+    app:layout_constraintTop_toBottomOf="@id/etEmail"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    android:layout_marginTop="20dp"
+    android:layout_marginBottom="60dp"
+    android:layout_marginStart="32dp"
+    android:layout_marginEnd="32dp"
+    android:padding="12dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>

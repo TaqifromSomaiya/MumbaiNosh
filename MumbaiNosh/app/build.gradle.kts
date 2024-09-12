@@ -1,11 +1,18 @@
+val annotationProcessor: Unit
+    get() {
+        TODO()
+    }
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.google.android.libraries.mapsplatform.secrets.gradle.plugin)
+    alias(libs.plugins.google.gms.google.services)
 }
 
 android {
     namespace = "com.example.mumbainosh"
     compileSdk = 34
+
 
     defaultConfig {
         applicationId = "com.example.mumbainosh"
@@ -33,10 +40,25 @@ android {
     buildFeatures {
         viewBinding = true
     }
+
+    packagingOptions {
+        exclude("META-INF/LICENSE.md")
+        exclude("META-INF/NOTICE.md")
+        exclude("META-INF/ASL2.0")
+        exclude("META-INF/NOTICE.md")
+    }
 }
 
-dependencies {
 
+dependencies {
+    implementation ("com.airbnb.android:lottie:5.0.3")
+    implementation(platform("com.google.firebase:firebase-bom:33.2.0"))
+    implementation ("com.google.firebase:firebase-database:20.0.5")
+    implementation("com.google.firebase:firebase-analytics")
+    implementation ("com.github.bumptech.glide:glide:4.11.0")
+    annotationProcessor ("com.github.bumptech.glide:compiler:4.11.0")
+    implementation(libs.android.mail.v167)
+    implementation(libs.android.activation)
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)
